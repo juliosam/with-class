@@ -9,15 +9,21 @@ export default class Fetch extends Component {
   }
 
   async componentDidMount(){
-    const res = await fetch('https://jsonplaceholder.typicode.com/users')
-    const data = await res.json()
-    console.log(data)
-    this.setState({data : data})
+    try {
+      const res = await fetch('https://jsonplaceholder.typicode.com/users')
+      const data = await res.json()
+      console.log(data)
+      this.setState({data : data.slice(3,6)})
+
+    } catch (error) {
+      console.log(error.message)
+    }
+    
   }
 
   render() {
     return (
-      <div>
+      <div className='fetched'>
         <ul>
           {this.state.data.map(item => {
             return(

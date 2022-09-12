@@ -15,3 +15,16 @@ code {
 .App {
   text-align: center;
 }
+
+.fetched{
+  padding: 40px;
+  background-color: azure;
+}
+
+.fetched li{
+  display: inline-block;
+  border: 1px solid green;
+  border-radius: 7px;
+  padding: 20px;
+  margin: 8px;
+}
